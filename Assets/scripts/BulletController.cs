@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class BulletController : MonoBehaviour {
@@ -13,7 +13,7 @@ public class BulletController : MonoBehaviour {
         mainController = GameObject.Find("Main").GetComponent<MainController>();
     }
 	
-	void FixedUpdate() {
+    void FixedUpdate() {
         rb2d.velocity = new Vector2(direction.x * speed, direction.y * speed);
     }
 
