@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CamelController : MonoBehaviour {
@@ -13,6 +13,8 @@ public class CamelController : MonoBehaviour {
     private float timeStamp = 0;
 
     private Vector2 direction;
+    
+    protected bool paused;
 
     void Start()
 	{
@@ -55,14 +57,10 @@ public class CamelController : MonoBehaviour {
         }
     }
 
-    protected bool paused;
-
-
     void OnPauseGame()
     {
         paused = true;
     }
-
 
     void OnResumeGame()
     {
