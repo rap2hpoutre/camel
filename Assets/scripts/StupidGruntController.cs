@@ -6,6 +6,7 @@ public class StupidGruntController : MonoBehaviour {
     public GameObject player;
     private Rigidbody2D rb2d;
     private float speed = 0.02f;
+    protected bool paused;
 
     // Use this for initialization
     void Start () {
@@ -13,7 +14,7 @@ public class StupidGruntController : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void FixedUpdate() {
+    void FixedUpdate() {
 
         if (paused) return;
 
@@ -39,8 +40,6 @@ public class StupidGruntController : MonoBehaviour {
 
         rb2d.transform.Translate(direction * speed);
     }
-
-    protected bool paused;
 
 
     void OnPauseGame()
