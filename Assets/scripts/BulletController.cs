@@ -8,7 +8,7 @@ public class BulletController : MonoBehaviour {
     public float speed = 10;
     private MainController mainController;
 
-    void Start () {
+    void Awake () {
         rb2d = GetComponent<Rigidbody2D>();
         mainController = GameObject.Find("Main").GetComponent<MainController>();
     }
@@ -24,13 +24,14 @@ public class BulletController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name != "Camel")
+
+        if (col.gameObject.name != "camel")
         {
             Destroy(gameObject);
         }
         if (col.gameObject.tag == "grunt")
         {
-            mainController.blinkScreen();
+            mainController.blinkScreen(); // Todo: understand why it does not work
             Destroy(col.gameObject);
         }
 

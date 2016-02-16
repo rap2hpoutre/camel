@@ -16,7 +16,7 @@ public class CamelController : MonoBehaviour {
     
     protected bool paused;
 
-    void Start()
+	void Awake()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
         direction = new Vector2(1, 0);
@@ -53,7 +53,7 @@ public class CamelController : MonoBehaviour {
     {
         if (col.gameObject.tag == "grunt")
         {
-            Debug.Log("Mort");
+            // Debug.Log("Mort");
         }
     }
 
