@@ -24,17 +24,15 @@ public class BulletController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-
         if (col.gameObject.name != "camel")
         {
             Destroy(gameObject);
         }
         if (col.gameObject.tag == "grunt")
         {
-            mainController.blinkScreen(); // Todo: understand why it does not work
+			mainController.blinkScreen();
             Destroy(col.gameObject);
         }
-
     }
 
 

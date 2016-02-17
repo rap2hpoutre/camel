@@ -53,7 +53,7 @@ public class CamelController : MonoBehaviour {
     {
         if (col.gameObject.tag == "grunt")
         {
-            // Debug.Log("Mort");
+            Debug.Log("Mort");
         }
     }
 
