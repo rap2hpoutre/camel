@@ -5,6 +5,8 @@ public class GruntController : MonoBehaviour
 {
 
 	protected bool paused;
+	public ParticleSystem particle;
+
 
 	void OnPauseGame()
 	{
@@ -15,5 +17,10 @@ public class GruntController : MonoBehaviour
 	void OnResumeGame()
 	{
 		paused = false;
+	}
+
+	void OnDestroy()
+	{
+		Instantiate(particle, transform.position, Quaternion.identity);
 	}
 }

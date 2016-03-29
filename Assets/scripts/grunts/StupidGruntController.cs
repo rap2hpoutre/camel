@@ -8,8 +8,15 @@ public class StupidGruntController : GruntController {
 
     void FixedUpdate() 
 	{
-        if (paused) return;
+		if (paused || player == null) return;
 
-		transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed);
+		Vector3 test = transform.position - player.transform.position;
+		float distance = test.magnitude;
+
+		if (distance < 10) {
+			transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed);
+			speed *= 1.0001f;
+		}
+
     }
 }

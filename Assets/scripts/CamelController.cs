@@ -9,12 +9,14 @@ public class CamelController : MonoBehaviour {
 
     public BulletController bullet;
 
-    private float cooldown = 0.35f;
+    private float cooldown = 0.25f;
     private float timeStamp = 0;
 
     private Vector2 direction;
     
     protected bool paused;
+
+	public ParticleSystem particle;
 
 	void Awake()
 	{
@@ -54,6 +56,7 @@ public class CamelController : MonoBehaviour {
         if (col.gameObject.tag == "grunt")
         {
             Debug.Log("Mort");
+			Destroy (gameObject);
         }
     }
 
@@ -66,4 +69,9 @@ public class CamelController : MonoBehaviour {
     {
         paused = false;
     }
+
+	void OnDestroy()
+	{
+		Instantiate(particle, transform.position, Quaternion.identity);
+	}
 }
