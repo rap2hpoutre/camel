@@ -6,6 +6,13 @@ public class GruntController : MonoBehaviour
 
 	protected bool paused;
 	public ParticleSystem particle;
+	public float speed = 0.02f;
+
+
+	void Awake()
+	{
+		speed *= 1 + (0.5f - Random.value);
+	}
 
 
 	void OnPauseGame()

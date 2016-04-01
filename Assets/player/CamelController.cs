@@ -9,7 +9,7 @@ public class CamelController : MonoBehaviour {
 
     public BulletController bullet;
 
-    private float cooldown = 0.2f;
+    public float cooldown = 0.2f;
     private float timeStamp = 0;
 
     private Vector2 direction;

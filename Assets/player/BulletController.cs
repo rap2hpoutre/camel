@@ -5,7 +5,7 @@ public class BulletController : MonoBehaviour {
 
     private Rigidbody2D rb2d;
     public Vector2 direction;
-    public float speed = 10;
+    public float speed = 15;
     private MainController mainController;
 
     void Awake () {
@@ -24,7 +24,7 @@ public class BulletController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name != "camel")
+		if (col.gameObject.name != "camel" && col.gameObject.tag != "bonus")
         {
             Destroy(gameObject);
         }

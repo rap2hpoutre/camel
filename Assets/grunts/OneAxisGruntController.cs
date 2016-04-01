@@ -3,7 +3,6 @@ using System.Collections;
 
 public class OneAxisGruntController : GruntController {
 
-	public float speed = 0.02f;
 	public int direction = 1;
 	public bool vertical = true;
 
