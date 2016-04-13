@@ -10,6 +10,7 @@ public class GateController : MonoBehaviour {
 	{
 		if (col.gameObject.name == "camel")
 		{
+			MainController.isQuitting = true;
 			SceneManager.LoadScene (scene);
 		}
 	}

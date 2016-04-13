@@ -7,7 +7,7 @@ public class StupidGruntController : GruntController {
 
     void FixedUpdate() 
 	{
-		if (paused || player == null) return;
+		if (MainController.paused || player == null) return;
 
 		Vector3 test = transform.position - player.transform.position;
 		float distance = test.magnitude;

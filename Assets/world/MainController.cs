@@ -5,6 +5,9 @@ using System.Collections;
 public class MainController : MonoBehaviour {
 
     public GameObject background;
+
+	public static bool isQuitting = false;
+	public static bool paused = false;
     
 
     public void blinkScreen()
@@ -21,19 +24,21 @@ public class MainController : MonoBehaviour {
 
     public void pauseGame()
     {
-        Object[] objects = FindObjectsOfType(typeof(GameObject));
-        foreach (GameObject go in objects)
-        {
-            go.SendMessage("OnPauseGame", SendMessageOptions.DontRequireReceiver);
-        }
+		paused = true;
     }
 
     public void resumeGame()
     {
-        Object[] objects = FindObjectsOfType(typeof(GameObject));
-        foreach (GameObject go in objects)
-        {
-            go.SendMessage("OnResumeGame", SendMessageOptions.DontRequireReceiver);
-        }
+		paused = false;
     }
+
+	void OnApplicationQuit()
+	{
+		isQuitting = true;
+	}
+
+	void OnLevelWasLoaded(int level)
+	{
+		isQuitting = false;
+	}
 }

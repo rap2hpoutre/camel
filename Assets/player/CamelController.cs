@@ -13,8 +13,6 @@ public class CamelController : MonoBehaviour {
     private float timeStamp = 0;
 
     private Vector2 direction;
-    
-    protected bool paused;
 
 	public ParticleSystem particle;
 
@@ -27,7 +25,7 @@ public class CamelController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-        if (paused) return;
+		if (MainController.paused) return;
 
         float moveHorizontal = Input.GetAxisRaw ("Horizontal");
 		float moveVertical = Input.GetAxisRaw ("Vertical");
@@ -60,18 +58,11 @@ public class CamelController : MonoBehaviour {
         }
     }
 
-    void OnPauseGame()
-    {
-        paused = true;
-    }
-
-    void OnResumeGame()
-    {
-        paused = false;
-    }
-
 	void OnDestroy()
 	{
-		Instantiate(particle, transform.position, Quaternion.identity);
+		if (!MainController.isQuitting) {
+			Instantiate(particle, transform.position, Quaternion.identity);
+		}
+
 	}
 }
