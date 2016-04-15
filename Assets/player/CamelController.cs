@@ -54,6 +54,7 @@ public class CamelController : MonoBehaviour {
         if (col.gameObject.tag == "grunt")
         {
             Debug.Log("Mort");
+			GameObject.Find ("Main").GetComponent<MainController> ().shaker.shake ();
 			Destroy (gameObject);
         }
     }

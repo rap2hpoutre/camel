@@ -9,6 +9,7 @@ public class ExplosionController : MonoBehaviour {
 	{
 		mainController = GameObject.Find("Main").GetComponent<MainController>();
 		mainController.blinkScreen();
+		mainController.shaker.shake ();
 	}
 
 	void OnTriggerEnter2D(Collider2D col)

@@ -3,8 +3,6 @@ using System.Collections;
 
 public class StupidGruntController : GruntController {
 
-    public GameObject player;
-
     void FixedUpdate() 
 	{
 		if (MainController.paused || player == null) return;
